@@ -1,0 +1,17 @@
+form {
+  background-color: white;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 5px;
+}
+input {
+  margin: 7px 0;
+  border: 1px solid darkgray;
+  outline: none;
+}
+button {
+  margin-top: 20px;
+  border: 1px solid darkgray;
+  outline: none;
+  padding: 7px 10px;
+}
