@@ -2,8 +2,35 @@
   <input type="radio" name="sex" value="man"> Мужчина<br>
   <input type="radio" name="sex" value="woman"> Женщина<br><hr>
     Ваш рост (см)<br>
-  <input type="text"><br>
+  <input type="text" #height><br>
     Ваш вес (кг)<br>
-  <input type="text"><br>
-  <button>Отправить</button>
+  <input type="text" #weight><br>
+  <button (click)="printData(height, weight)">Отправить</button>
 </form>
+<div class="result" [ngClass]="{'show': isShow}">
+  <h3>Результат</h3>
+  <p>Ваш ежедневный расход : {{ration}} ккал</p>
+  <table>
+    <caption>
+      <p>Рекомендуемая норма БЖУ</p>
+    </caption>
+    <tr>
+      <th></th>
+      <th>Белки</th>
+      <th>Жиры</th>
+      <th>Углеводы</th>
+    </tr>
+    <tr>
+      <td>в граммах</td>
+      <td>{{protein}}</td>
+      <td>{{fat}}</td>
+      <td>{{carbo}}</td>
+    </tr>
+    <tr>
+      <td>в ккал</td>
+      <td>{{protein * 4}}</td>
+      <td>{{fat * 9}}</td>
+      <td>{{carbo * 4}}</td>
+    </tr>
+  </table>
+</div>
