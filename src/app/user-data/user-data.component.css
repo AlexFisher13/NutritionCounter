@@ -2,36 +2,74 @@ form {
   background-color: white;
   display: inline-block;
   padding: 20px;
-  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+  width: 360px;
+  text-align: center;
 }
 input {
   margin: 7px 0;
-  border: 1px solid darkgray;
   outline: none;
 }
+#man {
+  margin: 0 10px 15px 0;
+}
+#woman {
+  margin: 0 10px 15px 20px;
+}
+.data {
+  width: 260px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 0;
+}
 button {
-  margin-top: 20px;
-  border: 1px solid darkgray;
+  width: 280px;
+  background-color: #4fae50;
+  color: white;
+  text-transform: uppercase;
   outline: none;
-  padding: 7px 10px;
+  border: 0;
+  margin-top: 10px;
+  padding: 12px 20px;
+  letter-spacing: .1rem;
+}
+
+
+.result {
+  display: none;
+  margin: 20px auto;
+  background-color: white;
+  padding: 10px;
+  width: 380px;
+  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+}
+h5 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  margin: 8px;
+  font-weight: normal;
+}
+p {
+  margin: 8px;
 }
 table {
   text-align: center;
-  background-color: white;
+  background-color: #f2f2f2;
   border-spacing: 0;
+  margin: 0 auto 10px;
 }
 caption {
-  border: 1px solid gray;
+  border: 1px solid white;
+  background-color: #f2f2f2;
 }
-.result {
-  display: none;
-  margin-top: 30px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 20px;
-}
+
 td, th {
-  border: 1px solid gray;
+  border: 1px solid white;
   padding: 5px 10px;
 }
 .show {

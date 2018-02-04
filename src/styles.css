@@ -2,5 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 body {
   font-family: 'Montserrat';
-  background-color: beige;
+  background-color: #83bd62;
+  text-align: center;
 }
