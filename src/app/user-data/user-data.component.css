@@ -75,3 +75,7 @@ td, th {
 .show {
   display: table;
 }
+.recipe {
+  font-size: 12px;
+  text-align: justify;
+}
