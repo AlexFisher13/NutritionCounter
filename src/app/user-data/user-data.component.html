@@ -5,10 +5,6 @@
       <mat-radio-button value="woman">Женщина</mat-radio-button>
     </mat-radio-group>
 
-    <!--<input type="text" placeholder="Ваш возраст" #age><br>-->
-    <!--<input type="text" placeholder="Ваш рост (см)" #height><br>-->
-    <!--<input type="text" placeholder="Ваш вес (кг)" #weight><br>-->
-
 
     <mat-form-field>
       <input matInput placeholder="Возраст" [formControl]="ageControl" [errorStateMatcher]="matcher" #age>
@@ -24,7 +20,6 @@
       <input matInput placeholder="Вес (кг)" [formControl]="weightControl" [errorStateMatcher]="matcher" #weight>
       <mat-error *ngIf="weightControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
     </mat-form-field>
-
 
 
     <mat-form-field>

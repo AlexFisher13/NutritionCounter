@@ -34,8 +34,6 @@ export class UserDataComponent implements OnInit {
   weightControl = new FormControl('', [
     Validators.required,
   ]);
-
-
   matcher = new MyErrorStateMatcher();
 
 
