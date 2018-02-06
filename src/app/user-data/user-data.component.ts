@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDataComponent implements OnInit {
 
-
   selected = 'active1';
-
   gender;
   ration;
   protein;
@@ -37,10 +35,9 @@ export class UserDataComponent implements OnInit {
       case 'active5' : this.ration = Math.ceil(this.ration*1.8); break;
       }
 
-
     this.protein = Math.ceil(weight * 1.7);
     this.fat = Math.ceil(weight * 1.2);
-    this.carbo = Math.ceil(weight * 3.1);
+    this.carbo = Math.ceil((this.ration - (this.protein*4 + this.fat*9))/4);
 
     this.isShow = true;
     return false;
