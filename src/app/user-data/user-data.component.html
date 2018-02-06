@@ -5,7 +5,7 @@
       <mat-radio-button value="woman">Woman</mat-radio-button>
     </mat-radio-group>
 
-    <input type="text" placeholder="Ваш возраст" #age><br>
+    <input type="text"  placeholder="Ваш возраст" #age><br>
     <input type="text" placeholder="Ваш рост (см)" #height><br>
     <input type="text" placeholder="Ваш вес (кг)" #weight><br>
 
@@ -15,13 +15,12 @@
         <mat-option value="active2">Средняя активность</mat-option>
         <mat-option value="active3">Тренировки через день</mat-option>
         <mat-option value="active4">Физический труд</mat-option>
-        <mat-option value="active5">Физический труд и тренровки</mat-option>
+        <mat-option value="active5">Физический труд и тренировки</mat-option>
       </mat-select>
     </mat-form-field>
 
-    <button (click)="printData(age, height, weight)">Отправить</button>
+    <button mat-raised-button (click)="printData(age, height, weight)">Отправить</button>
   </div>
-
 
   <div class="block result" [ngClass]="{'show': isShow}">
     <h5>Результат</h5>

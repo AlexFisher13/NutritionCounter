@@ -2,10 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UserDataComponent } from './user-data/user-data.component';
-import {
-  MatButtonModule, MatCheckboxModule, MatRadioModule, MatSelect,
-  MatSelectModule
-} from "@angular/material";
+import { MatButtonModule, MatCheckboxModule, MatRadioModule, MatSelectModule } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
