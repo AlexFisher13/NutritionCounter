@@ -30,11 +30,11 @@ export class UserDataComponent implements OnInit {
     }
 
     switch (this.selected) {
-      case 'active1' : this.ration *= 1.2; break;
-      case 'active2' : this.ration *= 1.37; break;
-      case 'active3' : this.ration *= 1.46; break;
-      case 'active4' : this.ration *= 1.637; break;
-      case 'active5' : this.ration *= 1.8; break;
+      case 'active1' : this.ration = Math.ceil(this.ration*1.2); break;
+      case 'active2' : this.ration = Math.ceil(this.ration*1.37); break;
+      case 'active3' : this.ration = Math.ceil(this.ration*1.46); break;
+      case 'active4' : this.ration = Math.ceil(this.ration*1.637); break;
+      case 'active5' : this.ration = Math.ceil(this.ration*1.8); break;
       }
 
 
