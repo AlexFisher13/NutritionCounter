@@ -11,3 +11,15 @@ h4 {
   margin: 10px auto 11px;
   font-weight: lighter;
 }
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}

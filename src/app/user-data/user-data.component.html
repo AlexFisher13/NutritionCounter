@@ -1,11 +1,15 @@
 <form>
-  <input type="radio" id="man" name="sex" value="man">
+
+  <input type="radio" id="man" name="sex" value="man" [(ngModel)]="gender">
   <label for="man">Мужчина</label>
-  <input type="radio" id="woman" name="sex" value="woman">
+  <input type="radio" id="woman" name="sex" value="woman" [(ngModel)]="gender">
   <label for="woman">Женщина</label>
+  <div>Вы выбрали: {{gender}}</div>
+
+  <input type="text" class="data" placeholder="Ваш возраст" #age><br>
   <input type="text" class="data" placeholder="Ваш рост (см)" #height><br>
   <input type="text" class="data" placeholder="Ваш вес (кг)" #weight><br>
-  <button (click)="printData(height, weight)">Отправить</button>
+  <button (click)="printData(age, height, weight)">Отправить</button>
 </form>
 
 
