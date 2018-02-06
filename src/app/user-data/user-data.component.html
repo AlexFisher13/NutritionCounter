@@ -1,16 +1,27 @@
-<form>
+<div>
+<div class="form">
 
-  <input type="radio" id="man" name="sex" value="man" [(ngModel)]="gender">
-  <label for="man">Мужчина</label>
-  <input type="radio" id="woman" name="sex" value="woman" [(ngModel)]="gender">
-  <label for="woman">Женщина</label>
-  <div>Вы выбрали: {{gender}}</div>
+  <mat-radio-group [(ngModel)]="gender">
+    <mat-radio-button value="man">Man</mat-radio-button>
+    <mat-radio-button value="woman">Woman</mat-radio-button>
+  </mat-radio-group>
 
   <input type="text" class="data" placeholder="Ваш возраст" #age><br>
   <input type="text" class="data" placeholder="Ваш рост (см)" #height><br>
   <input type="text" class="data" placeholder="Ваш вес (кг)" #weight><br>
+
+  <mat-form-field>
+    <mat-select [(value)]="selected">
+      <mat-option value="active1">Редко двигаюсь</mat-option>
+      <mat-option value="active2">Средняя активность</mat-option>
+      <mat-option value="active3">Тренировки через день</mat-option>
+      <mat-option value="active4">Физический труд</mat-option>
+      <mat-option value="active5">Физический труд и тренровки</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <button (click)="printData(age, height, weight)">Отправить</button>
-</form>
+</div>
 
 
 <div class="result" [ngClass]="{'show': isShow}">
@@ -50,4 +61,5 @@
   Кол-во белка не должно быть ниже 1,5г на кг веса, и для женщин 1,2, так как белок основной строительный элемент для мышц.
   Для людей с повышенной физ. активностью долю белка стоит повышать на 15-30%. Долей жиров не стоит принебрегать, так как жиры
   важнейший нутриент, большое кол-во гормонов синтезируются из жиров и тд. Долей углеводов стоит жервовать во время диеты.</p>
+</div>
 </div>

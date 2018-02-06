@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UserDataComponent } from './user-data/user-data.component';
-import {MatButtonModule, MatCheckboxModule, MatRadioButton, MatRadioModule} from "@angular/material";
+import {
+  MatButtonModule, MatCheckboxModule, MatRadioModule, MatSelect,
+  MatSelectModule
+} from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
@@ -18,7 +21,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

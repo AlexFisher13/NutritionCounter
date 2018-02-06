@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDataComponent implements OnInit {
 
+
+  selected = 'active1';
+
   gender;
   ration;
   protein;
@@ -25,6 +28,16 @@ export class UserDataComponent implements OnInit {
     if (this.gender == 'man') {
       this.ration = Math.ceil((10*weight + 6.25*height - 5*age)+5);
     }
+
+    switch (this.selected) {
+      case 'active1' : this.ration *= 1.2; break;
+      case 'active2' : this.ration *= 1.37; break;
+      case 'active3' : this.ration *= 1.46; break;
+      case 'active4' : this.ration *= 1.637; break;
+      case 'active5' : this.ration *= 1.8; break;
+      }
+
+
     this.protein = Math.ceil(weight * 1.7);
     this.fat = Math.ceil(weight * 1.2);
     this.carbo = Math.ceil(weight * 3.1);
