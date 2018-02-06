@@ -45,7 +45,7 @@ export class UserDataComponent implements OnInit {
         this.ration = Math.ceil((10*weight + 6.25*height + 5*age)-161);
     }
     if (this.gender == 'man') {
-      this.ration = Math.ceil((10*weight + 6.25*height - 5*age)+5);
+      this.ration = Math.ceil((10*weight + 6.25*height + 5*age)+5);
     }
 
     switch (this.selected) {
