@@ -1,39 +1,28 @@
-form {
-  background-color: white;
-  display: inline-block;
+.block {
   padding: 20px;
+  width: 360px;
+  background-color: white;
   -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
-  width: 360px;
-  text-align: center;
 }
 .form {
-  background-color: white;
   display: inline-block;
-  padding: 20px;
-  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
-  width: 360px;
   text-align: center;
 }
+.result {
+  display: none;
+  margin: 20px auto;
+}
 input {
-  margin: 7px 0;
+  margin: 10px;
   outline: none;
-}
-#man {
-  margin: 0 10px 15px 0;
-}
-#woman {
-  margin: 0 10px 15px 20px;
-}
-.data {
   width: 260px;
   padding: 10px;
   background-color: #f2f2f2;
   border: 0;
 }
+
 button {
   width: 280px;
   background-color: #4fae50;
@@ -44,18 +33,6 @@ button {
   margin-top: 10px;
   padding: 12px 20px;
   letter-spacing: .1rem;
-}
-
-
-.result {
-  display: none;
-  margin: 20px auto;
-  background-color: white;
-  padding: 10px;
-  width: 380px;
-  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
 }
 h5 {
   font-size: 20px;
