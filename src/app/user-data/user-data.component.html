@@ -5,9 +5,27 @@
       <mat-radio-button value="woman">Женщина</mat-radio-button>
     </mat-radio-group>
 
-    <input type="text"  placeholder="Ваш возраст" #age><br>
-    <input type="text" placeholder="Ваш рост (см)" #height><br>
-    <input type="text" placeholder="Ваш вес (кг)" #weight><br>
+    <!--<input type="text" placeholder="Ваш возраст" #age><br>-->
+    <!--<input type="text" placeholder="Ваш рост (см)" #height><br>-->
+    <!--<input type="text" placeholder="Ваш вес (кг)" #weight><br>-->
+
+
+    <mat-form-field>
+      <input matInput placeholder="Возраст" [formControl]="ageControl" [errorStateMatcher]="matcher" #age>
+      <mat-error *ngIf="ageControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Рост (см)" [formControl]="heightControl" [errorStateMatcher]="matcher" #height>
+      <mat-error *ngIf="heightControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Вес (кг)" [formControl]="weightControl" [errorStateMatcher]="matcher" #weight>
+      <mat-error *ngIf="weightControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
+    </mat-form-field>
+
+
 
     <mat-form-field>
       <mat-select [(value)]="selected">
@@ -52,12 +70,9 @@
 
   <div class="block result" [ngClass]="{'show': isShow}">
     <h5>Рекомендации</h5>
-    <p class="recipe">По каким то там стандартам в среднем каждый килограмм нашего тела ежедневного нуждается в 30 ккал.
-    Соответственно для нормального сущестования Вам необходимо потреблять {{ration}} ккал.<br>
-    Для эффективного жиросжигания следует пребывать в небольшом дефиците каллорий, который не должен превышать 10% основного рациона.
-    В противном случае организм испытывает стресс, что в итоге ведет ко многим неприятным последствиям.<br>
-    Кол-во белка не должно быть ниже 1,5г на кг веса, и для женщин 1,2, так как белок основной строительный элемент для мышц.
-    Для людей с повышенной физ. активностью долю белка стоит повышать на 15-30%. Долей жиров не стоит принебрегать, так как жиры
-    важнейший нутриент, большое кол-во гормонов синтезируются из жиров и тд. Долей углеводов стоит жервовать во время диеты.</p>
+    <p class="recipe">Рацион рассчитан для поддержания данного веса тела.
+    Для эффективного жиросжигания следует уменьшить расчетный рацион на 10%, то есть до {{ration*0.9}} ккал.
+    При уменьшении рациона на большуй процент, организм будет испытывать стресс, что приведет к неприятным результам.
+</p>
   </div>
 </div>
