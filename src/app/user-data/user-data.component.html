@@ -7,18 +7,24 @@
 
 
     <mat-form-field>
-      <input matInput placeholder="Возраст" [formControl]="ageControl" [errorStateMatcher]="matcher" #age>
-      <mat-error *ngIf="ageControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
+      <input matInput placeholder="Возраст" [formControl]="ageControl"
+             minlength="2" maxlength="2" #age>
+      <mat-error *ngIf="ageControl.hasError('required')">Ой, а что это мы возраст не написали</mat-error>
+      <mat-error *ngIf="ageControl.hasError('pattern')">Это не похоже на возраст</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Рост (см)" [formControl]="heightControl" [errorStateMatcher]="matcher" #height>
-      <mat-error *ngIf="heightControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
+      <input matInput placeholder="Рост (см)" [formControl]="heightControl"
+             minlength="2" maxlength="5" #height>
+      <mat-error *ngIf="heightControl.hasError('required')">Необходимо указать рост</mat-error>
+      <mat-error *ngIf="heightControl.hasError('pattern')">Не корректный формат записи</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Вес (кг)" [formControl]="weightControl" [errorStateMatcher]="matcher" #weight>
-      <mat-error *ngIf="weightControl.hasError('required')">Вот это <strong>не заполнил</strong></mat-error>
+      <input matInput placeholder="Вес (кг)" [formControl]="weightControl"
+             minlength="2" maxlength="4" #weight>
+      <mat-error *ngIf="weightControl.hasError('required')">Не стоит скрывать свой вес</mat-error>
+      <mat-error *ngIf="weightControl.hasError('pattern')">Не бывает такого веса</mat-error>
     </mat-form-field>
 
 
@@ -32,7 +38,7 @@
       </mat-select>
     </mat-form-field>
 
-    <button mat-raised-button (click)="printData(age, height, weight)">Отправить</button>
+    <button mat-raised-button (click)="printData(age, height, weight)">рассчитать</button>
   </div>
 
   <div class="block result" [ngClass]="{'show': isShow}">
@@ -67,7 +73,7 @@
     <h5>Рекомендации</h5>
     <p class="recipe">Рацион рассчитан для поддержания данного веса тела.
     Для эффективного жиросжигания следует уменьшить расчетный рацион на 10%.
-    При уменьшении рациона на большуй процент, организм будет испытывать стресс, что приведет к неприятным результам.
+    При уменьшении рациона на больший процент, организм будет испытывать стресс, что приведет к неприятным результам.
 </p>
   </div>
 </div>

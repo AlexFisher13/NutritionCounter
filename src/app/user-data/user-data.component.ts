@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
-
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+import {FormControl, Validators} from '@angular/forms';
+import {isNumber} from 'util';
 
 @Component({
   selector: 'app-user-data',
@@ -18,7 +10,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class UserDataComponent implements OnInit {
 
   selected = 'active1';
-  gender;
+  gender = 'man';
   ration;
   protein;
   fat;
@@ -27,21 +19,28 @@ export class UserDataComponent implements OnInit {
 
   ageControl = new FormControl('', [
     Validators.required,
-    Validators.pattern('')
+    Validators.pattern(/^\d{2}$/)
   ]);
   heightControl = new FormControl('', [
     Validators.required,
+    Validators.pattern(/^\d{3}(\.?\d)?$/)
   ]);
   weightControl = new FormControl('', [
     Validators.required,
+    Validators.pattern(/^\d{2,3}(\.?\d)?$/)
   ]);
-  matcher = new MyErrorStateMatcher();
-
 
   printData(a, h, w) {
     const age = Number(a.value);
     const weight = Number(w.value);
     const height = Number(h.value);
+    if ((age < 10) || (weight < 30) || (weight > 200) || (height < 50) || (height > 250)) {
+      return false;
+    }
+    if (isNaN(age) || isNaN(weight) || isNaN(height)) {
+      return false;
+    }
+
     if (this.gender === 'woman') {
         this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) - 161);
     }
@@ -50,10 +49,10 @@ export class UserDataComponent implements OnInit {
     }
 
     switch (this.selected) {
-      case 'active1' : this.ration = Math.ceil(this.ration * 1.2); break;
-      case 'active2' : this.ration = Math.ceil(this.ration * 1.37); break;
+      case 'active1' : this.ration = Math.ceil(this.ration * 1.15); break;
+      case 'active2' : this.ration = Math.ceil(this.ration * 1.3); break;
       case 'active3' : this.ration = Math.ceil(this.ration * 1.46); break;
-      case 'active4' : this.ration = Math.ceil(this.ration * 1.637); break;
+      case 'active4' : this.ration = Math.ceil(this.ration * 1.63); break;
       case 'active5' : this.ration = Math.ceil(this.ration * 1.8); break;
       }
 
