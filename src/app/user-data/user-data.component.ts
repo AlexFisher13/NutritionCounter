@@ -27,6 +27,7 @@ export class UserDataComponent implements OnInit {
 
   ageControl = new FormControl('', [
     Validators.required,
+    Validators.pattern('')
   ]);
   heightControl = new FormControl('', [
     Validators.required,
