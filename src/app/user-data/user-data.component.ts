@@ -42,10 +42,10 @@ export class UserDataComponent implements OnInit {
     const age = Number(a.value);
     const weight = Number(w.value);
     const height = Number(h.value);
-    if (this.gender == 'woman') {
+    if (this.gender === 'woman') {
         this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) - 161);
     }
-    if (this.gender == 'man') {
+    if (this.gender === 'man') {
       this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) + 5);
     }
 
