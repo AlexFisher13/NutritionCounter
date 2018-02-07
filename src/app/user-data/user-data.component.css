@@ -11,7 +11,7 @@
   display: none;
 }
 mat-radio-button {
-  margin: 6px 50px 12px 28px;
+  margin: 6px 48px 12px 20px;
 }
 mat-form-field {
   width: 300px;
@@ -58,4 +58,18 @@ td, th {
 .recipe {
   font-size: 12px;
   text-align: justify;
+}
+@media screen and (max-width: 380px) {
+  .block {
+    width: 260px;
+  }
+  mat-radio-button {
+    margin: 6px 24px 12px 10px;
+  }
+  mat-form-field {
+    width: 250px;
+  }
+  button {
+    width: 250px;
+  }
 }

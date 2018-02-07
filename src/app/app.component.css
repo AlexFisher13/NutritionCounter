@@ -5,5 +5,10 @@ h3 {
   letter-spacing: .05rem;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
-  font-size: 27px;
+  font-size: 25px;
+}
+@media screen and (max-width: 380px) {
+  h3 {
+    font-size: 21px;
+  }
 }

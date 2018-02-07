@@ -38,27 +38,27 @@ export class UserDataComponent implements OnInit {
 
 
   printData(a, h, w) {
-    let age = Number(a.value);
-    let weight = Number(w.value);
-    let height = Number(h.value);
+    const age = Number(a.value);
+    const weight = Number(w.value);
+    const height = Number(h.value);
     if (this.gender == 'woman') {
-        this.ration = Math.ceil((10*weight + 6.25*height + 5*age)-161);
+        this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) - 161);
     }
     if (this.gender == 'man') {
-      this.ration = Math.ceil((10*weight + 6.25*height + 5*age)+5);
+      this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) + 5);
     }
 
     switch (this.selected) {
-      case 'active1' : this.ration = Math.ceil(this.ration*1.2); break;
-      case 'active2' : this.ration = Math.ceil(this.ration*1.37); break;
-      case 'active3' : this.ration = Math.ceil(this.ration*1.46); break;
-      case 'active4' : this.ration = Math.ceil(this.ration*1.637); break;
-      case 'active5' : this.ration = Math.ceil(this.ration*1.8); break;
+      case 'active1' : this.ration = Math.ceil(this.ration * 1.2); break;
+      case 'active2' : this.ration = Math.ceil(this.ration * 1.37); break;
+      case 'active3' : this.ration = Math.ceil(this.ration * 1.46); break;
+      case 'active4' : this.ration = Math.ceil(this.ration * 1.637); break;
+      case 'active5' : this.ration = Math.ceil(this.ration * 1.8); break;
       }
 
     this.protein = Math.ceil(weight * 1.7);
     this.fat = Math.ceil(weight * 1.2);
-    this.carbo = Math.ceil((this.ration - (this.protein*4 + this.fat*9))/4);
+    this.carbo = Math.ceil((this.ration - (this.protein * 4 + this.fat * 9)) / 4);
 
     this.isShow = true;
     return false;
