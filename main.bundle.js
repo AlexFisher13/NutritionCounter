@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h3 {\r\n  margin: 10px auto;\r\n  font-weight: normal;\r\n  text-transform: uppercase;\r\n  letter-spacing: .05rem;\r\n  color: white;\r\n  text-shadow: 1px 1px 3px rgba(0, 0, 0, .8);\r\n  font-size: 27px;\r\n}\r\n", ""]);
+exports.push([module.i, "h3 {\r\n  margin: 10px auto;\r\n  font-weight: normal;\r\n  text-transform: uppercase;\r\n  letter-spacing: .05rem;\r\n  color: white;\r\n  text-shadow: 1px 1px 3px rgba(0, 0, 0, .8);\r\n  font-size: 25px;\r\n}\r\n@media screen and (max-width: 380px) {\r\n  h3 {\r\n    font-size: 21px;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -137,7 +137,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".block {\r\n  margin-top: 13px;\r\n  padding: 20px;\r\n  width: 360px;\r\n  background-color: white;\r\n  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);\r\n  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);\r\n}\r\n.result {\r\n  display: none;\r\n}\r\nmat-radio-button {\r\n  margin: 6px 50px 12px 28px;\r\n}\r\nmat-form-field {\r\n  width: 300px;\r\n}\r\nbutton {\r\n  font-size: 15px;\r\n  width: 300px;\r\n  background-color: #4fae50;\r\n  color: white;\r\n  text-transform: uppercase;\r\n  outline: none;\r\n  border: 0;\r\n  padding: 12px 20px;\r\n  letter-spacing: .07rem;\r\n}\r\nh5 {\r\n  font-size: 20px;\r\n  text-transform: uppercase;\r\n  letter-spacing: .1rem;\r\n  margin: 8px;\r\n  font-weight: normal;\r\n}\r\np {\r\n  margin: 8px;\r\n}\r\ntable {\r\n  text-align: center;\r\n  background-color: #f2f2f2;\r\n  border-spacing: 0;\r\n  margin: 0 auto 10px;\r\n}\r\ncaption {\r\n  border: 1px solid white;\r\n  background-color: #f2f2f2;\r\n}\r\ntd, th {\r\n  border: 1px solid white;\r\n  padding: 5px 10px;\r\n}\r\n.show {\r\n  display: table;\r\n}\r\n.recipe {\r\n  font-size: 12px;\r\n  text-align: justify;\r\n}\r\n", ""]);
+exports.push([module.i, ".block {\r\n  margin-top: 13px;\r\n  padding: 20px;\r\n  width: 360px;\r\n  background-color: white;\r\n  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);\r\n  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);\r\n}\r\n.result {\r\n  display: none;\r\n}\r\nmat-radio-button {\r\n  margin: 6px 48px 12px 20px;\r\n}\r\nmat-form-field {\r\n  width: 300px;\r\n}\r\nbutton {\r\n  font-size: 15px;\r\n  width: 300px;\r\n  background-color: #4fae50;\r\n  color: white;\r\n  text-transform: uppercase;\r\n  outline: none;\r\n  border: 0;\r\n  padding: 12px 20px;\r\n  letter-spacing: .07rem;\r\n}\r\nh5 {\r\n  font-size: 20px;\r\n  text-transform: uppercase;\r\n  letter-spacing: .1rem;\r\n  margin: 8px;\r\n  font-weight: normal;\r\n}\r\np {\r\n  margin: 8px;\r\n}\r\ntable {\r\n  text-align: center;\r\n  background-color: #f2f2f2;\r\n  border-spacing: 0;\r\n  margin: 0 auto 10px;\r\n}\r\ncaption {\r\n  border: 1px solid white;\r\n  background-color: #f2f2f2;\r\n}\r\ntd, th {\r\n  border: 1px solid white;\r\n  padding: 5px 10px;\r\n}\r\n.show {\r\n  display: table;\r\n}\r\n.recipe {\r\n  font-size: 12px;\r\n  text-align: justify;\r\n}\r\n@media screen and (max-width: 380px) {\r\n  .block {\r\n    width: 260px;\r\n  }\r\n  mat-radio-button {\r\n    margin: 6px 24px 12px 10px;\r\n  }\r\n  mat-form-field {\r\n    width: 250px;\r\n  }\r\n  button {\r\n    width: 250px;\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -204,10 +204,10 @@ var UserDataComponent = /** @class */ (function () {
         var weight = Number(w.value);
         var height = Number(h.value);
         if (this.gender == 'woman') {
-            this.ration = Math.ceil((10 * weight + 6.25 * height + 5 * age) - 161);
+            this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) - 161);
         }
         if (this.gender == 'man') {
-            this.ration = Math.ceil((10 * weight + 6.25 * height + 5 * age) + 5);
+            this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) + 5);
         }
         switch (this.selected) {
             case 'active1':
