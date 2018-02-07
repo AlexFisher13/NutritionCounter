@@ -37,7 +37,7 @@
 
   <div class="block result" [ngClass]="{'show': isShow}">
     <h5>Результат</h5>
-    <p>Ваш ежедневный расход: {{ration}} ккал</p>
+    <p>Ежедневный расход: {{ration}} ккал</p>
     <table>
       <caption>
         <p>Рекомендуемая норма БЖУ</p>
@@ -49,13 +49,13 @@
         <th>Углеводы</th>
       </tr>
       <tr>
-        <td>в граммах</td>
+        <td>грамм</td>
         <td>{{protein}}</td>
         <td>{{fat}}</td>
         <td>{{carbo}}</td>
       </tr>
       <tr>
-        <td>в ккал</td>
+        <td>ккал</td>
         <td>{{protein * 4}}</td>
         <td>{{fat * 9}}</td>
         <td>{{carbo * 4}}</td>
