@@ -183,11 +183,11 @@ var UserDataComponent = /** @class */ (function () {
         ]);
         this.heightControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{3}(\.?\d)?$/)
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{3}(\.\d)?$/)
         ]);
         this.weightControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{2,3}(\.?\d)?$/)
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{2,3}(\.\d)?$/)
         ]);
     }
     UserDataComponent.prototype.printData = function (a, h, w) {
