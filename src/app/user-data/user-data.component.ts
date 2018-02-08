@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {isNumber} from 'util';
 
 @Component({
   selector: 'app-user-data',
@@ -23,11 +22,11 @@ export class UserDataComponent implements OnInit {
   ]);
   heightControl = new FormControl('', [
     Validators.required,
-    Validators.pattern(/^\d{3}(\.?\d)?$/)
+    Validators.pattern(/^\d{3}(\.\d)?$/)
   ]);
   weightControl = new FormControl('', [
     Validators.required,
-    Validators.pattern(/^\d{2,3}(\.?\d)?$/)
+    Validators.pattern(/^\d{2,3}(\.\d)?$/)
   ]);
 
   printData(a, h, w) {
@@ -61,6 +60,7 @@ export class UserDataComponent implements OnInit {
     this.carbo = Math.ceil((this.ration - (this.protein * 4 + this.fat * 9)) / 4);
 
     this.isShow = true;
+
     return false;
   }
 
