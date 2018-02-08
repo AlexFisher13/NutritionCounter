@@ -150,7 +150,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-data/user-data.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div class=\"block form\">\r\n    <mat-radio-group [(ngModel)]=\"gender\">\r\n      <mat-radio-button value=\"man\">Мужчина</mat-radio-button>\r\n      <mat-radio-button value=\"woman\">Женщина</mat-radio-button>\r\n    </mat-radio-group>\r\n\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"Возраст\" [formControl]=\"ageControl\" [errorStateMatcher]=\"matcher\" #age>\r\n      <mat-error *ngIf=\"ageControl.hasError('required')\">Вот это <strong>не заполнил</strong></mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"Рост (см)\" [formControl]=\"heightControl\" [errorStateMatcher]=\"matcher\" #height>\r\n      <mat-error *ngIf=\"heightControl.hasError('required')\">Вот это <strong>не заполнил</strong></mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"Вес (кг)\" [formControl]=\"weightControl\" [errorStateMatcher]=\"matcher\" #weight>\r\n      <mat-error *ngIf=\"weightControl.hasError('required')\">Вот это <strong>не заполнил</strong></mat-error>\r\n    </mat-form-field>\r\n\r\n\r\n    <mat-form-field>\r\n      <mat-select [(value)]=\"selected\">\r\n        <mat-option value=\"active1\">Редко двигаюсь</mat-option>\r\n        <mat-option value=\"active2\">Средняя активность</mat-option>\r\n        <mat-option value=\"active3\">Тренировки через день</mat-option>\r\n        <mat-option value=\"active4\">Физический труд</mat-option>\r\n        <mat-option value=\"active5\">Физический труд и тренировки</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n\r\n    <button mat-raised-button (click)=\"printData(age, height, weight)\">Отправить</button>\r\n  </div>\r\n\r\n  <div class=\"block result\" [ngClass]=\"{'show': isShow}\">\r\n    <h5>Результат</h5>\r\n    <p>Ежедневный расход: {{ration}} ккал</p>\r\n    <table>\r\n      <caption>\r\n        <p>Рекомендуемая норма БЖУ</p>\r\n      </caption>\r\n      <tr>\r\n        <th></th>\r\n        <th>Белки</th>\r\n        <th>Жиры</th>\r\n        <th>Углеводы</th>\r\n      </tr>\r\n      <tr>\r\n        <td>грамм</td>\r\n        <td>{{protein}}</td>\r\n        <td>{{fat}}</td>\r\n        <td>{{carbo}}</td>\r\n      </tr>\r\n      <tr>\r\n        <td>ккал</td>\r\n        <td>{{protein * 4}}</td>\r\n        <td>{{fat * 9}}</td>\r\n        <td>{{carbo * 4}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n\r\n  <div class=\"block result\" [ngClass]=\"{'show': isShow}\">\r\n    <h5>Рекомендации</h5>\r\n    <p class=\"recipe\">Рацион рассчитан для поддержания данного веса тела.\r\n    Для эффективного жиросжигания следует уменьшить расчетный рацион на 10%.\r\n    При уменьшении рациона на большуй процент, организм будет испытывать стресс, что приведет к неприятным результам.\r\n</p>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div>\r\n  <div class=\"block form\">\r\n    <mat-radio-group [(ngModel)]=\"gender\">\r\n      <mat-radio-button value=\"man\">Мужчина</mat-radio-button>\r\n      <mat-radio-button value=\"woman\">Женщина</mat-radio-button>\r\n    </mat-radio-group>\r\n\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"Возраст\" [formControl]=\"ageControl\"\r\n             minlength=\"2\" maxlength=\"2\" #age>\r\n      <mat-error *ngIf=\"ageControl.hasError('required')\">Ой, а что это мы возраст не написали</mat-error>\r\n      <mat-error *ngIf=\"ageControl.hasError('pattern')\">Это не похоже на возраст</mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"Рост (см)\" [formControl]=\"heightControl\"\r\n             minlength=\"2\" maxlength=\"5\" #height>\r\n      <mat-error *ngIf=\"heightControl.hasError('required')\">Необходимо указать рост</mat-error>\r\n      <mat-error *ngIf=\"heightControl.hasError('pattern')\">Не корректный формат записи</mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n      <input matInput placeholder=\"Вес (кг)\" [formControl]=\"weightControl\"\r\n             minlength=\"2\" maxlength=\"4\" #weight>\r\n      <mat-error *ngIf=\"weightControl.hasError('required')\">Не стоит скрывать свой вес</mat-error>\r\n      <mat-error *ngIf=\"weightControl.hasError('pattern')\">Не бывает такого веса</mat-error>\r\n    </mat-form-field>\r\n\r\n\r\n    <mat-form-field>\r\n      <mat-select [(value)]=\"selected\">\r\n        <mat-option value=\"active1\">Редко двигаюсь</mat-option>\r\n        <mat-option value=\"active2\">Средняя активность</mat-option>\r\n        <mat-option value=\"active3\">Тренировки через день</mat-option>\r\n        <mat-option value=\"active4\">Физический труд</mat-option>\r\n        <mat-option value=\"active5\">Физический труд и тренировки</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n\r\n    <button mat-raised-button (click)=\"printData(age, height, weight)\">рассчитать</button>\r\n  </div>\r\n\r\n  <div class=\"block result\" [ngClass]=\"{'show': isShow}\">\r\n    <h5>Результат</h5>\r\n    <p>Ежедневный расход: {{ration}} ккал</p>\r\n    <table>\r\n      <caption>\r\n        <p>Рекомендуемая норма БЖУ</p>\r\n      </caption>\r\n      <tr>\r\n        <th></th>\r\n        <th>Белки</th>\r\n        <th>Жиры</th>\r\n        <th>Углеводы</th>\r\n      </tr>\r\n      <tr>\r\n        <td>грамм</td>\r\n        <td>{{protein}}</td>\r\n        <td>{{fat}}</td>\r\n        <td>{{carbo}}</td>\r\n      </tr>\r\n      <tr>\r\n        <td>ккал</td>\r\n        <td>{{protein * 4}}</td>\r\n        <td>{{fat * 9}}</td>\r\n        <td>{{carbo * 4}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n\r\n  <div class=\"block result\" [ngClass]=\"{'show': isShow}\">\r\n    <h5>Рекомендации</h5>\r\n    <p class=\"recipe\">Рацион рассчитан для поддержания данного веса тела.\r\n    Для эффективного жиросжигания следует уменьшить расчетный рацион на 10%.\r\n    При уменьшении рациона на больший процент, организм будет испытывать стресс, что приведет к неприятным результам.\r\n</p>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -158,7 +158,6 @@ module.exports = "<div>\r\n  <div class=\"block form\">\r\n    <mat-radio-group 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export MyErrorStateMatcher */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDataComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
@@ -173,55 +172,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/** Error when invalid control is dirty, touched, or submitted. */
-var MyErrorStateMatcher = /** @class */ (function () {
-    function MyErrorStateMatcher() {
-    }
-    MyErrorStateMatcher.prototype.isErrorState = function (control, form) {
-        var isSubmitted = form && form.submitted;
-        return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-    };
-    return MyErrorStateMatcher;
-}());
-
 var UserDataComponent = /** @class */ (function () {
     function UserDataComponent() {
         this.selected = 'active1';
+        this.gender = 'man';
         this.isShow = false;
         this.ageControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern('')
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{2}$/)
         ]);
         this.heightControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required,
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{3}(\.?\d)?$/)
         ]);
         this.weightControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]('', [
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required,
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern(/^\d{2,3}(\.?\d)?$/)
         ]);
-        this.matcher = new MyErrorStateMatcher();
     }
     UserDataComponent.prototype.printData = function (a, h, w) {
         var age = Number(a.value);
         var weight = Number(w.value);
         var height = Number(h.value);
-        if (this.gender == 'woman') {
+        if ((age < 10) || (weight < 30) || (weight > 200) || (height < 50) || (height > 250)) {
+            return false;
+        }
+        if (isNaN(age) || isNaN(weight) || isNaN(height)) {
+            return false;
+        }
+        if (this.gender === 'woman') {
             this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) - 161);
         }
-        if (this.gender == 'man') {
+        if (this.gender === 'man') {
             this.ration = Math.ceil((10 * weight + 6.25 * height - 5 * age) + 5);
         }
         switch (this.selected) {
             case 'active1':
-                this.ration = Math.ceil(this.ration * 1.2);
+                this.ration = Math.ceil(this.ration * 1.15);
                 break;
             case 'active2':
-                this.ration = Math.ceil(this.ration * 1.37);
+                this.ration = Math.ceil(this.ration * 1.3);
                 break;
             case 'active3':
                 this.ration = Math.ceil(this.ration * 1.46);
                 break;
             case 'active4':
-                this.ration = Math.ceil(this.ration * 1.637);
+                this.ration = Math.ceil(this.ration * 1.63);
                 break;
             case 'active5':
                 this.ration = Math.ceil(this.ration * 1.8);
